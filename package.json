@@ -1,0 +1,25 @@
+{
+  "name": "Restaurant",
+  "version": "1.0.0",
+  "description": "Landing page ",
+  "main": "server.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss public/css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss public/css/style.css",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "node server.js"
+  },
+  "author": "Tiffany",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "serve-static": "^1.13.2"
+  }
+}

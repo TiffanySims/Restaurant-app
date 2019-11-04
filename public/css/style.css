@@ -1,0 +1,549 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+form {
+  display: inline-block;
+  width: 50%; }
+  @media (max-width: 37.5em) {
+    form {
+      display: block;
+      width: 100%; } }
+
+input {
+  overflow: visible;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden; }
+
+section {
+  padding-top: 10rem; }
+  @media (max-width: 75em) {
+    section {
+      padding: 5rem 2rem; } }
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto; }
+
+.heading-1 {
+  color: #d43737;
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+
+.heading-2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7); }
+
+.paragraph-2 {
+  width: 50%; }
+  @media (max-width: 37.5em) {
+    .paragraph-2 {
+      width: 100%; } }
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backk.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
+  position: relative; }
+  .hero__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .hero__logo {
+    width: 30rem;
+    height: auto; }
+    @media (max-width: 37.5em) {
+      .hero__logo {
+        width: 25rem;
+        padding-top: 3rem; } }
+  .hero__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 4rem;
+    letter-spacing: 0.6rem; }
+    @media (max-width: 37.5em) {
+      .hero__title {
+        font-size: 2rem;
+        margin: 1rem; } }
+  .hero__btn {
+    text-decoration: none;
+    padding: 1.1rem 2.7rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: white;
+    border: 2px solid transparent;
+    background-color: #d43737;
+    border-radius: 10rem;
+    transition: all .2s; }
+    @media (max-width: 37.5em) {
+      .hero__btn {
+        padding: 1rem 2rem; } }
+    .hero__btn:hover {
+      background-color: #f00d0d; }
+    .hero__btn:active {
+      transform: translateY(2px); }
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.94);
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  width: 20%;
+  height: 95vh;
+  padding: 1rem; }
+  @media (max-width: 75em) {
+    .nav {
+      width: 25%; } }
+  @media (max-width: 56.25em) {
+    .nav {
+      display: none;
+      width: 100%;
+      background-color: rgba(18, 17, 17, 0.9); } }
+  .nav__logo {
+    height: 20rem;
+    margin-left: 3.5rem; }
+    @media (max-width: 56.25em) {
+      .nav__logo {
+        display: block;
+        margin: 0 auto; } }
+  .nav__ul {
+    margin-left: 4.5rem; }
+    @media (max-width: 56.25em) {
+      .nav__ul {
+        text-align: center;
+        margin-left: 0; } }
+  .nav__icon {
+    height: 1rem;
+    width: 1rem;
+    fill: rgba(255, 255, 255, 0.5);
+    margin-right: 1rem; }
+  .nav__item {
+    list-style: none;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.3rem; }
+    @media (max-width: 56.25em) {
+      .nav__item {
+        font-size: 2.8rem; } }
+    .nav__item::after {
+      content: "";
+      display: block;
+      margin: 1rem auto 0 auto;
+      border-style: double;
+      border-width: 0.5px;
+      color: rgba(255, 255, 255, 0.02); }
+      @media (max-width: 56.25em) {
+        .nav__item::after {
+          display: none; } }
+  .nav__link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5); }
+    @media (max-width: 56.25em) {
+      .nav__link {
+        color: white; } }
+    .nav__link:hover {
+      color: white; }
+
+.about__container {
+  display: flex;
+  padding: 6rem; }
+  @media (max-width: 75em) {
+    .about__container {
+      padding: 5rem; } }
+  @media (max-width: 56.25em) {
+    .about__container {
+      padding: 1rem; } }
+  @media (max-width: 47.5em) {
+    .about__container {
+      display: block; } }
+
+.about__image {
+  width: 50%; }
+  @media (max-width: 47.5em) {
+    .about__image {
+      width: 100%;
+      margin-bottom: 6rem;
+      text-align: center; } }
+
+.about__img {
+  height: 30rem;
+  width: 40rem;
+  border-radius: 5rem; }
+  @media (max-width: 56.25em) {
+    .about__img {
+      width: 35rem;
+      height: 25rem; } }
+  @media (max-width: 37.5em) {
+    .about__img {
+      width: 28rem; } }
+
+.about__info {
+  margin-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media (max-width: 56.25em) {
+    .about__info {
+      margin-left: 8rem; } }
+  @media (max-width: 47.5em) {
+    .about__info {
+      margin-left: 0; } }
+
+.special__intro {
+  padding: 1rem;
+  padding-bottom: 3rem; }
+
+.special__img {
+  background-color: black;
+  box-shadow: 10px 10px 30px 0 black; }
+
+.special__image {
+  height: 20rem;
+  width: 30rem;
+  opacity: 0.8;
+  transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .special__image {
+      height: 20rem;
+      width: 25rem; } }
+  @media (max-width: 47.5em) {
+    .special__image {
+      height: 15rem;
+      width: 18rem; } }
+  .special__image:hover {
+    transform: scale(1.2);
+    opacity: 1; }
+
+.special__info {
+  height: 20rem;
+  width: 30rem;
+  padding: 2rem;
+  border: 1px solid rgba(48, 46, 46, 0.1);
+  background-color: white;
+  box-shadow: 10px 10px 30px 0 black; }
+  @media (max-width: 56.25em) {
+    .special__info {
+      height: 20rem;
+      width: 25rem; } }
+  @media (max-width: 47.5em) {
+    .special__info {
+      height: 15rem;
+      width: 18rem; } }
+  .special__info-heading {
+    font-size: 2rem;
+    margin: 2rem auto;
+    text-align: center; }
+    @media (max-width: 47.5em) {
+      .special__info-heading {
+        font-size: 1.4rem;
+        margin: 1rem 0; } }
+  .special__info-paragraph {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center; }
+    @media (max-width: 47.5em) {
+      .special__info-paragraph {
+        font-size: 1.2rem; } }
+  .special__info-price {
+    font-size: 1.3rem;
+    color: #d43737;
+    text-align: center; }
+    @media (max-width: 47.5em) {
+      .special__info-price {
+        font-size: 1rem; } }
+
+.special__back {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/color.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 1rem; }
+
+.special__menu {
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
+  grid-template-rows: repeat(2, 20rem);
+  justify-content: center;
+  margin: 6rem 0; }
+  @media (max-width: 56.25em) {
+    .special__menu {
+      grid-template-columns: repeat(3, 25rem);
+      grid-template-rows: repeat(2, 20rem); } }
+  @media (max-width: 47.5em) {
+    .special__menu {
+      grid-template-columns: repeat(3, 18rem);
+      grid-template-rows: repeat(2, 15rem); } }
+  @media (max-width: 37.5em) {
+    .special__menu {
+      grid-template-columns: repeat(2, 18rem); } }
+
+.menu__items {
+  margin: 10rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem; }
+  @media (max-width: 37.5em) {
+    .menu__items {
+      grid-template-columns: none; } }
+
+.menu__item {
+  margin-bottom: 1rem; }
+
+.menu__heading {
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem; }
+
+.menu__paragraph {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.8; }
+
+.menu__price {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #d43737; }
+
+.dishOfWeek {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/newback.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem; }
+
+.card {
+  width: 80rem;
+  display: flex;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px 0 black; }
+  @media (max-width: 56.25em) {
+    .card {
+      width: 100%; } }
+  @media (max-width: 37.5em) {
+    .card {
+      height: 12rem; } }
+  .card__image {
+    width: 50%; }
+    @media (max-width: 37.5em) {
+      .card__image {
+        width: 100%; } }
+  .card__img {
+    width: 100%; }
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  width: 50%; }
+  @media (max-width: 37.5em) {
+    .info {
+      padding: 1rem; } }
+  .info__heading-1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #d43737; }
+    @media (max-width: 37.5em) {
+      .info__heading-1 {
+        font-size: 2rem; } }
+  .info__heading-2 {
+    font-size: 2rem;
+    margin-bottom: 1rem; }
+    @media (max-width: 37.5em) {
+      .info__heading-2 {
+        font-size: 1.5rem; } }
+  .info__paragraph {
+    font-size: 1.5rem; }
+    @media (max-width: 37.5em) {
+      .info__paragraph {
+        display: none; } }
+
+footer {
+  background-color: #1c1813;
+  padding: 5rem;
+  color: rgba(255, 255, 255, 0.5); }
+
+.footer {
+  display: flex; }
+  @media (max-width: 37.5em) {
+    .footer {
+      text-align: center; } }
+
+.aboutus {
+  width: 50%; }
+  @media (max-width: 37.5em) {
+    .aboutus {
+      width: 90%; } }
+  .aboutus__heading {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem; }
+  .aboutus__paragraph {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    width: 70%; }
+    @media (max-width: 37.5em) {
+      .aboutus__paragraph {
+        width: 100%; } }
+
+.location {
+  list-style: none;
+  margin-bottom: 2rem; }
+  .location__list {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; }
+
+.hours {
+  list-style: none; }
+  .hours__heading {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem; }
+  .hours__list {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; }
+
+span {
+  font-size: 1.5rem;
+  margin-left: 0.5rem; }
+
+.reservations {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem;
+  width: 75%;
+  margin-left: 5rem; }
+  @media (max-width: 37.5em) {
+    .reservations {
+      display: block;
+      width: 100%;
+      margin-left: 0; } }
+  .reservations__date {
+    width: 25%;
+    margin-right: 1rem;
+    font-size: 1.5rem; }
+    @media (max-width: 47.5em) {
+      .reservations__date {
+        width: 40%; } }
+
+.reserve {
+  padding: 2rem; }
+
+@media (max-width: 37.5em) {
+  .reservations {
+    text-align: center; } }
+
+.reservations__heading {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #d43737; }
+
+.reservations__guest {
+  padding: 3px; }
+
+.reservations__btn {
+  display: inline-block;
+  padding: 1.2rem 3.2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  background-color: #d43737;
+  color: white;
+  border: none;
+  cursor: pointer; }
+  @media (max-width: 47.5em) {
+    .reservations__btn {
+      margin-top: 10px; } }
+  .reservations__btn:focus {
+    outline: none; }
+
+.footer__image {
+  width: 50%;
+  text-align: right; }
+  @media (max-width: 37.5em) {
+    .footer__image {
+      display: none; } }
+
+.footer__img {
+  width: 75%; }
+
+.js-wp-1,
+.js-wp-2 {
+  opacity: 0; }
+
+.js-wp-1.animated,
+.js-wp-2.animated {
+  opacity: 1; }
+
+.icon {
+  display: none; }
+  @media (max-width: 56.25em) {
+    .icon {
+      float: right;
+      cursor: pointer;
+      font-size: 20px;
+      color: white;
+      margin-top: 1rem;
+      position: absolute;
+      display: block;
+      top: 5px;
+      right: 5px;
+      z-index: 2; } }
+
+.show_dinner,
+.show_drinks,
+.show_desserts {
+  font-size: 2rem;
+  padding: 3px;
+  display: inline-block;
+  font-size: 2rem;
+  border-bottom: 1px solid #d43737;
+  margin-right: 5px;
+  transition: all 0.3s; }
+
+.show_dinner:hover,
+.show_drinks:hover,
+.show_desserts:hover {
+  border-bottom: 1px solid #a32a2a;
+  cursor: pointer; }
+
+.drinks, .desserts {
+  display: none; }
+
+.show_menu {
+  margin-top: 20px;
+  text-align: center; }
+
+.schedule {
+  font-size: 4rem; }
+  .schedule__days {
+    margin-bottom: 1rem; }
+  @media (max-width: 37.5em) {
+    .schedule {
+      display: none; } }
+
+.schedule__days > h4 {
+  color: #d43737;
+  margin-bottom: 0.5rem; }
+
+hr {
+  margin: 1rem 0; }
