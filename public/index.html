@@ -56,17 +56,14 @@
                             <use xlink:href="img/sprite.svg#icon-calendar"></use>
                         </svg>  <a href="#" class="nav__link js-scroll-reservations">Reservations</a>
            </li>
-            <li class= nav__item>
-               <svg class="nav__icon">
-                            <use xlink:href="img/sprite.svg#icon-map2"></use>
-                        </svg>  <a href = "#" class="nav__link js-scroll-locations">Locations</a>
-           </li>
+            
            
            
        </ul>
-      
+      <div class="nav__popup">
        
-       
+       <a href = "#" class="nav__link popup__order">ORDER NOW</a>
+      </div>
    </nav>
    
    </header>
@@ -141,6 +138,8 @@
                   <li class="show_drinks">Drinks</li>
                   <li class="show_desserts">Desserts</li>
               </ul>
+              <button class="popup__order" >ORDER NOW</button>
+
           </div>
            <div class="menu__items dinner">
               
@@ -354,7 +353,7 @@
    </section>
    <section class="reserve container">
         <h1 class="reservations__heading">Reserve A Table</h1>
-        <p class="paragraph paragraph-2">Have a special event coming up a need to reserve a space? Don't Wait! Reserve your table below. We look forward to seeing you.... </p>
+        <p class="paragraph paragraph-2">Have a special event coming up and need to reserve a space? Don't Wait! Reserve your table below. We look forward to seeing you.... </p>
         <div class="reservations js-reservations">
                
                  <form action="#">
@@ -364,8 +363,9 @@
                      <input type="date" >
                      <input type="time"  >
                      <input type="number"  placeholder="# of guest" >
+                     <div class="reservations__button">
                      <button class="reservations__btn">Make Reservation </button>
-                     
+                     </div>
                  </form>
                  <div class="schedule">
                      <h3>Opening Hours</h3>
@@ -388,13 +388,23 @@
              </div>
 
 </section>
-
+<section class="testimonial__section">
+    <div class="testimonial__section--text">
+        <h2 class="testimonial__section--heading">What people are saying...</h2>
+        <div class="testimonies">
+        
+        
+    </div>
+    <div class="circle circle-0"></div>
+        <div class = "circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+</section>
    
    <footer>
        <div class="container">
           <div class="footer">
-           <div class="aboutus">
-              <h4 class="aboutus__heading">ABOUT US</h4> 
+
               <p class="aboutus__paragraph">Serving delicious meals for over 30 years </p>
               
             <ul class="location js-location">
@@ -407,7 +417,7 @@
                 <li class="location__list">info@italiancruisine.com</li>
             </ul>
             
-            <h4 class="hours__heading">HOURS</h4>
+           
             <ul class="hours">
                 <li class= hours__list>
                     Monday - Thursday <span>4pm-10pm</span>
@@ -416,14 +426,29 @@
                   Friday - Sunday <span>4pm-12am</span>
                 </li>
             </ul>
-           </div>
-           <div class="footer__image">
-           <img src ="img/restaurant.jpeg" alt= "restaurant" class="footer__img">
-        </div>
+           
+           
            </div>
        </div>
    </footer>
-   
+
+   <div class="popup">
+    <div class="popup__container ">
+    <div class="popup__image">
+    <img src="img/newback.jpg">
+    </div>
+    <div class="popup__menu">
+        <div class="close">X</div>
+        <h1 class="popup__heading">Order Food To-Go</h1>
+        <div class="popup__content">
+            
+        </div>
+        
+    </div>
+    
+    </div>
+    </div>
+    </div>
     
    
     <script
@@ -432,6 +457,8 @@
   crossorigin="anonymous"></script>
   <script src="js/jquery.waypoints.min.js"></script>
    <script src="js/animate.js"> </script>
+   <script src="js/app.js"> </script>
+
    
 </body>
 </html>

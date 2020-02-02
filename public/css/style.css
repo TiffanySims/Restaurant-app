@@ -21,7 +21,7 @@ input {
   font-size: 1.3rem; }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   overflow-x: hidden; }
 
 section {
@@ -59,7 +59,7 @@ section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backk.jpg);
   background-size: cover;
   background-position: center;
-  height: 95vh;
+  height: 100vh;
   position: relative; }
   .hero__box {
     display: flex;
@@ -92,7 +92,7 @@ section {
     border: 2px solid transparent;
     background-color: #d43737;
     border-radius: 10rem;
-    transition: all .2s; }
+    transition: all 0.2s; }
     @media (max-width: 37.5em) {
       .hero__btn {
         padding: 1rem 2rem; } }
@@ -108,8 +108,11 @@ section {
   right: 0;
   color: rgba(255, 255, 255, 0.6);
   width: 20%;
-  height: 95vh;
+  height: 100vh;
   padding: 1rem; }
+  .nav__popup {
+    text-align: center;
+    margin-top: 4rem; }
   @media (max-width: 75em) {
     .nav {
       width: 25%; } }
@@ -220,7 +223,7 @@ section {
   height: 20rem;
   width: 30rem;
   opacity: 0.8;
-  transition: all .3s; }
+  transition: all 0.3s; }
   @media (max-width: 56.25em) {
     .special__image {
       height: 20rem;
@@ -298,8 +301,8 @@ section {
 .menu__items {
   margin: 10rem auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 6rem; }
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15rem; }
   @media (max-width: 37.5em) {
     .menu__items {
       grid-template-columns: none; } }
@@ -326,6 +329,9 @@ section {
   background-size: cover;
   background-position: center;
   padding: 8rem; }
+  @media (max-width: 37.5em) {
+    .dishOfWeek {
+      display: none; } }
 
 .card {
   width: 80rem;
@@ -379,49 +385,29 @@ section {
 
 footer {
   background-color: #1c1813;
-  padding: 5rem;
+  padding: 3rem;
   color: rgba(255, 255, 255, 0.5); }
 
 .footer {
-  display: flex; }
+  display: flex;
+  justify-content: space-around; }
   @media (max-width: 37.5em) {
     .footer {
       text-align: center; } }
 
-.aboutus {
-  width: 50%; }
-  @media (max-width: 37.5em) {
-    .aboutus {
-      width: 90%; } }
-  .aboutus__heading {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 2rem; }
-  .aboutus__paragraph {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    width: 70%; }
-    @media (max-width: 37.5em) {
-      .aboutus__paragraph {
-        width: 100%; } }
+.aboutus__paragraph {
+  font-size: 1.5rem;
+  line-height: 1.8; }
 
 .location {
-  list-style: none;
-  margin-bottom: 2rem; }
+  list-style: none; }
   .location__list {
-    margin-bottom: 0.5rem;
     font-size: 1.5rem; }
 
 .hours {
   list-style: none; }
-  .hours__heading {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 1rem; }
   .hours__list {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem; }
+    font-size: 1.5rem; }
 
 span {
   font-size: 1.5rem;
@@ -429,10 +415,10 @@ span {
 
 .reservations {
   display: flex;
-  justify-content: space-around;
-  padding: 3rem;
+  justify-content: space-between;
+  padding-top: 3rem;
   width: 75%;
-  margin-left: 5rem; }
+  margin: 0 auto; }
   @media (max-width: 37.5em) {
     .reservations {
       display: block;
@@ -447,7 +433,7 @@ span {
         width: 40%; } }
 
 .reserve {
-  padding: 2rem; }
+  padding: 5rem 2rem; }
 
 @media (max-width: 37.5em) {
   .reservations {
@@ -461,15 +447,20 @@ span {
 .reservations__guest {
   padding: 3px; }
 
+.reservations__button {
+  text-align: right; }
+
 .reservations__btn {
   display: inline-block;
-  padding: 1.2rem 3.2rem;
+  padding: 0.8rem 1rem;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background-color: #d43737;
   color: white;
   border: none;
   cursor: pointer; }
+  .reservations__btn:hover {
+    background-color: #f00d0d; }
   @media (max-width: 47.5em) {
     .reservations__btn {
       margin-top: 10px; } }
@@ -526,7 +517,8 @@ span {
   border-bottom: 1px solid #a32a2a;
   cursor: pointer; }
 
-.drinks, .desserts {
+.drinks,
+.desserts {
   display: none; }
 
 .show_menu {
@@ -547,3 +539,131 @@ span {
 
 hr {
   margin: 1rem 0; }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.726); }
+  .popup__container {
+    width: 75%;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    display: flex; }
+  .popup__item {
+    cursor: pointer;
+    padding: 0.5rem; }
+    .popup__item:hover {
+      background-color: rgba(233, 227, 227, 0.384); }
+  .popup__heading {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d43737; }
+  .popup__menu {
+    padding: 10px;
+    font-size: 2.5rem;
+    overflow-y: scroll;
+    width: 50%; }
+  .popup__order {
+    cursor: pointer; }
+    .popup__order:hover {
+      background-color: #f00d0d; }
+  .popup__image {
+    width: 50%; }
+    .popup__image img {
+      width: 100%;
+      height: 100%; }
+
+.order__items {
+  padding: 1rem;
+  font-size: 4rem; }
+
+.order__item {
+  margin: 1.5rem 0; }
+
+.order__description {
+  margin: 0.3rem 0; }
+
+.order__totals {
+  text-align: right;
+  font-size: 3rem; }
+
+.order__info {
+  margin: 1rem 0; }
+
+.description {
+  font-weight: 600; }
+
+.total {
+  color: #d43737; }
+
+.popup__order,
+.order,
+.pay {
+  background: #d43737;
+  color: white;
+  font-size: 1.7rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  max-width: 130px;
+  margin: 2rem auto; }
+
+.active {
+  background-color: rgba(233, 227, 227, 0.874); }
+
+.error {
+  color: #d43737;
+  text-align: center;
+  font-size: 1.7rem; }
+
+.close {
+  color: #312929c2;
+  font-size: 2rem;
+  text-align: right;
+  font-weight: 600;
+  cursor: pointer; }
+
+.testimonial__section {
+  background: linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.795)), url(../img/test.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 500px; }
+  .testimonial__section--text {
+    width: 50%;
+    font-size: 3rem;
+    line-height: 1.7;
+    margin: 0 auto; }
+  .testimonial__section--heading {
+    color: #d43737;
+    font-size: 3.5rem;
+    margin-bottom: 3rem; }
+
+.testimonies {
+  font-size: 2.7rem; }
+
+blockquote {
+  color: white; }
+
+cite {
+  color: #d43737; }
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 0.2rem solid #d43737;
+  border-radius: 50%;
+  display: inline-block; }
+
+.circle-active {
+  background: #d43737; }
