@@ -1,0 +1,815 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
+@import "sass/mixin.scss";
+$color: #d43737;
+$color-white: white;
+$color-nav: rgba(255, 255, 255, 0.5);
+$main-font: "Lato", sans-serif;
+$secondary-font: "Herr Von Muellerhoff", cursive;
+$body-font: "Cabin", sans-serif;
+$main-font-color-dark: #252525;
+$primary-font-color: #150e2b;
+$secondary-font-color: #eb3922;
+$body-font-color: #515151;
+
+@import "mixin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: $main-font;
+  overflow-x: hidden;
+  color: $main-font-color-dark;
+}
+a {
+  text-decoration: none;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  width: 90%;
+  font-weight: 300;
+  @include respond(tab-port) {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+h1 {
+  font-size: 3.5rem;
+  @include respond(bg-phone) {
+    font-size: 3rem;
+  }
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: $secondary-font-color;
+}
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+section {
+  padding: 8rem 0;
+  @include respond(tab-land) {
+    padding: 5rem 0;
+  }
+}
+header {
+  padding-bottom: 8rem;
+  position: relative;
+}
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+  @include respond(tab-land) {
+    max-width: 90%;
+  }
+}
+.hero__container {
+  display: flex;
+  position: relative;
+  height: 95vh;
+  &--left {
+    width: 40%;
+    padding-top: 2rem;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &--right {
+    background-image: url("/img/b0.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+    padding-top: 2rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.hero__logo {
+  height: 12.5rem;
+  margin-top: -3rem;
+  img {
+    height: 100%;
+  }
+}
+.hero__text {
+  width: 65%;
+  margin-top: -6rem;
+  &--h3 {
+    font-size: 2rem;
+    color: $body-font-color;
+  }
+
+  &--link {
+    border: 1px solid $secondary-font-color;
+    background-color: $secondary-font-color;
+    color: #fff;
+    padding: 0.8rem 1.3rem;
+    font-size: 1.4rem;
+    width: 12rem;
+    @include respond(bg-phone) {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  &__links {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+
+    &--facebook {
+      color: $body-font-color;
+      &:hover {
+        color: #3b5998;
+      }
+    }
+    &--twitter {
+      color: $body-font-color;
+      &:hover {
+        color: #1da1f2;
+      }
+    }
+    &--instagram {
+      color: $body-font-color;
+      &:hover {
+        color: #8d3b98;
+      }
+    }
+  }
+}
+.nav {
+  text-align: right;
+  @include respond(tab-port) {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &__list {
+    list-style: none;
+    @include respond(tab-port) {
+      background-color: rgba(255, 255, 255, 0.8);
+      height: 95vh;
+      width: 100%;
+      padding: 4rem;
+    }
+    &--item {
+      text-transform: uppercase;
+      display: inline-block;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.5s;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      @include respond(tab-port) {
+        display: block;
+        margin-bottom: 3.5rem;
+        border-bottom: 0;
+      }
+      &:hover:not(:last-of-type) {
+        border-bottom: 2px solid $secondary-font-color;
+        @include respond(tab-port) {
+          border-bottom: none;
+        }
+      }
+      a {
+        font-size: 1.5rem;
+        color: $primary-font-color;
+      }
+    }
+  }
+}
+.mobile__nav {
+  color: $main-font-color-dark;
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+  }
+  & i {
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    cursor: pointer;
+  }
+}
+.nav:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide {
+  text-align: right;
+  z-index: 9999999;
+  cursor: pointer;
+  @include respond(bg-phone) {
+    display: none;
+  }
+  &__back {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    margin-right: -2px;
+    background-color: #fff;
+    color: $secondary-font-color;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    @include respond(tab-port) {
+      right: 12px;
+    }
+  }
+  &__forward {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+    background-color: $secondary-font-color;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: -61px;
+    @include respond(tab-port) {
+      right: -50px;
+    }
+  }
+}
+.image__gallery {
+  position: absolute;
+  top: 50%;
+  right: -4%;
+  &--circle {
+    width: 5px;
+    height: 5px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.527);
+  }
+}
+.activeClass {
+  background-color: $secondary-font-color;
+  transform: scale(1.5);
+}
+
+.about {
+  &__container {
+    display: flex;
+    &--1 {
+      @include respond(tab-port) {
+        flex-direction: column-reverse;
+      }
+    }
+    &--2 {
+      @include respond(tab-port) {
+        flex-direction: column;
+      }
+    }
+  }
+  &__image {
+    width: 50%;
+    height: 40rem;
+    @include respond(tab-port) {
+      width: 100%;
+      height: 100%;
+      margin: 2.5rem 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+  &__info {
+    width: 50%;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40rem;
+    font-weight: 300;
+    @include respond(tab-port) {
+      width: 100%;
+      height: 100%;
+      margin-left: 0;
+    }
+    &--h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+
+      color: $secondary-font-color;
+    }
+    &--p {
+      margin-bottom: 2rem;
+    }
+  }
+}
+.featured {
+  &--h3 {
+  }
+  &--h2 {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding-top: 3rem;
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &--item {
+    }
+  }
+  &__top {
+    height: 22rem;
+    position: relative;
+
+    &:hover figcaption {
+      opacity: 1;
+    }
+    &:hover img {
+      transform: scale(1);
+      filter: blur(4px) brightness(80%);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &--caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 1.5rem;
+      width: 80%;
+      color: #fff;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      backface-visibility: hidden;
+      span {
+        display: block;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: $secondary-font-color;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    padding: 0.2rem;
+    &--p {
+      line-height: 1rem;
+      margin: 0.7rem 0;
+      width: 100%;
+    }
+    &--order {
+      color: $secondary-font-color;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__order {
+    background-color: $primary-font-color;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    i {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.menu {
+  &__intro {
+    &--paragraph {
+      width: 50%;
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+  }
+  &__items {
+    margin-top: 10rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15rem;
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 1rem;
+    &--price {
+      font-size: 1.5rem;
+      margin-top: 0.7rem;
+      margin-bottom: 2rem;
+      color: $secondary-font-color;
+    }
+  }
+}
+.show_dinner,
+.show_drinks,
+.show_desserts {
+  font-size: 2rem;
+  padding: 3px;
+  display: inline-block;
+  font-size: 2rem;
+  border-bottom: 1px solid #d43737;
+  margin-right: 5px;
+  transition: all 0.3s;
+}
+.show_dinner:hover,
+.show_drinks:hover,
+.show_desserts:hover {
+  border-bottom: 1px solid #a32a2a;
+  cursor: pointer;
+}
+
+.drinks,
+.desserts {
+  display: none;
+}
+.show__menu {
+  margin-top: 20px;
+  text-align: center;
+  &--list {
+    margin-bottom: 2rem;
+  }
+}
+.vegan {
+  margin: 4rem auto;
+}
+
+.dishOfWeek {
+  background-image: url("/img/picture.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 15rem;
+  @include respond(tab-port) {
+    padding: 5rem;
+  }
+}
+
+.card {
+  height: 32rem;
+  display: flex;
+  margin: 0 auto;
+  background-color: $color-white;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px 0 black;
+  @include respond(bg-phone) {
+    height: 100%;
+    display: block;
+  }
+
+  &__image {
+    width: 50%;
+    @include respond(bg-phone) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+  &__container {
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    width: 50%;
+    @include respond(bg-phone) {
+      width: 100%;
+      display: block;
+    }
+    &--paragraph {
+      margin-bottom: 1rem;
+    }
+    &--button {
+      width: 100%;
+      text-align: right;
+    }
+  }
+}
+
+.testimonial__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  &--text {
+    width: 50%;
+    font-size: 3rem;
+    line-height: 1.7;
+    margin: 0 auto;
+    @include respond(bg-phone) {
+      width: 100%;
+    }
+  }
+  &--heading {
+    color: $color;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+}
+.testimonies {
+  font-size: 2.7rem;
+}
+blockquote {
+  color: $primary-font-color;
+}
+cite {
+  color: $secondary-font-color;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 0.2rem solid $secondary-font-color;
+  border-radius: 50%;
+  display: inline-block;
+}
+.circle-active {
+  background: $secondary-font-color;
+}
+
+.footer {
+  &__logo {
+    width: 25%;
+    @include respond(tab-port) {
+      width: 33.3%;
+    }
+    span {
+      color: $secondary-font-color;
+      font-size: 1.4rem;
+    }
+    p {
+      color: $primary-font-color;
+      width: 80%;
+      @include respond(bg-phone) {
+        width: 95%;
+      }
+    }
+  }
+  &__links {
+    color: $secondary-font-color;
+  }
+  &__hours {
+    width: 25%;
+    @include respond(tab-port) {
+      width: 33.3%;
+    }
+  }
+  &__contact {
+    width: 25%;
+    @include respond(tab-port) {
+      width: 33.3%;
+    }
+  }
+  &__subscribe {
+    width: 25%;
+    @include respond(tab-port) {
+      display: none;
+    }
+    input {
+      width: 90%;
+      padding: 0.7rem 1rem;
+    }
+    i {
+      font-size: 1.2rem;
+      padding: 0.2rem;
+      color: $secondary-font-color;
+    }
+  }
+  &__container {
+    background-color: #eee;
+    padding: 4rem 0;
+
+    &--top {
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 1.5rem;
+        @include respond(bg-phone) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    &--bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.hr {
+  height: 1px;
+  width: 100%;
+  margin: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.151);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  &__container {
+    width: 75%;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    display: flex;
+    @include respond(tab-port) {
+      width: 95%;
+    }
+    @include respond(bg-phone) {
+      width: 85%;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+      background-color: rgba(233, 227, 227, 0.384);
+    }
+  }
+  &__text {
+    margin-bottom: 3rem;
+    &--heading {
+      font-size: 2.5rem;
+      text-align: center;
+      color: $secondary-font-color;
+    }
+    &--paragraph {
+      font-size: 1.4rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__menu {
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    overflow-y: scroll;
+    width: 50%;
+    @include respond(bg-phone) {
+      width: 100%;
+    }
+  }
+  &__order {
+    cursor: pointer;
+    &:hover {
+      background-color: $secondary-font-color;
+    }
+  }
+  &__close {
+    color: #fff;
+    font-size: 3.5rem;
+    position: absolute;
+    top: 0.8rem;
+    right: 10rem;
+    font-weight: 600;
+    cursor: pointer;
+    @include respond(tab-port) {
+      right: 2rem;
+    }
+  }
+
+  &__image {
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include respond(bg-phone) {
+      display: none;
+    }
+  }
+}
+
+.order {
+  &__items {
+    padding: 1rem;
+    font-size: 4rem;
+  }
+  &__item {
+    margin: 1.5rem 0;
+  }
+  &__description {
+    margin: 0.3rem 0;
+  }
+  &__totals {
+    text-align: right;
+    font-size: 3rem;
+  }
+  &__info {
+    margin: 1rem 0;
+  }
+  & a {
+    color: white;
+    padding: 0.8rem 1.3rem;
+    border-radius: 2rem;
+  }
+}
+.description {
+  font-weight: 600;
+}
+.total {
+  color: $secondary-font-color;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__order,
+.pay {
+  background: $secondary-font-color;
+  color: white;
+  font-size: 1.7rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  max-width: 130px;
+  margin: 2rem auto;
+}
+
+.active {
+  background-color: #d3e3ef;
+}
+.error {
+  color: $color;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 15vw);
+  padding: 0;
+  @include respond(bg-phone) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 20vw);
+  }
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.js-wp-1,
+.js-wp-2,
+.js-wp-3,
+.js-wp-4,
+.js-wp-5,
+.js-wp-6,
+.js-wp-7 {
+  opacity: 0;
+}
+.js-wp-1.animated,
+.js-wp-2.animated,
+.js-wp-3.animated,
+.js-wp-4.animated,
+.js-wp-5.animated,
+.js-wp-6.animated,
+.js-wp-7.animated {
+  opacity: 1;
+}
