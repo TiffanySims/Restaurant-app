@@ -135,7 +135,7 @@ setInterval(() => {
   document.querySelectorAll(".image__gallery--circle").forEach((item) => {
     item.classList.remove("activeClass");
   });
-  image.style.backgroundImage = `url(/img/${imageGallery[count]})`;
+  image.style.backgroundImage = `url(img/${imageGallery[count]})`;
 
   document.querySelector(`.circle${count}`).classList.add("activeClass");
 
