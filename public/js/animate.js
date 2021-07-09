@@ -144,7 +144,7 @@ setInterval(() => {
   } else {
     count++;
   }
-}, 3500);
+}, 2500);
 
 const slideBack = document.querySelector(".slide__back");
 const slideForward = document.querySelector(".slide__forward");
